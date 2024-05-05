@@ -1,0 +1,40 @@
+.month-container {
+  display: grid;
+  margin: 0 auto;
+  inline-size: 100%;
+  block-size: 100%;
+  grid-gap: 1px;
+}
+
+.week-container {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.week-container_first-week {
+  justify-content: flex-end;
+}
+
+.cell {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  inline-size: calc(100% / 7);
+}
+
+.cell:hover {
+  background-color: gray;
+}
+
+.cell_saturday {
+  color: blue;
+}
+
+.cell_sunday {
+  color: red;
+}

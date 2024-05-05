@@ -1,0 +1,17 @@
+.full-date-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.full-date {
+  text-align: center;
+}
+
+.controls {
+  inline-size: 50px;
+  block-size: 30px;
+  cursor: pointer;
+}

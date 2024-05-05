@@ -25,6 +25,7 @@ export const Month = ({ month }: TMonthProps) => {
               className={classNames("cell", {
                 cell_saturday: day && day.dayOfWeekString === "Saturday",
                 cell_sunday: day && day.dayOfWeekString === "Sunday",
+                "cell_current-day": day?.isCurrentDay,
               })}
             >
               <Cell day={day} />

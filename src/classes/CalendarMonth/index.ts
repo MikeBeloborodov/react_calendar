@@ -15,10 +15,18 @@ export class CalendarMonth {
     const weeks: Array<undefined | CalendarDay>[] = [];
 
     this._days.forEach((day) => {
-      if (weeks.length && day.dayOfWeekString !== "Monday") {
-        weeks[weeks.length - 1].push(day);
+      if (day.dayOfWeek === 1) {
+        const week = Array(7).fill(undefined);
+        week[day.dayOfWeek - 1] = day;
+        weeks.push(week);
+      } else if (weeks.length === 0) {
+        const week = Array(7).fill(undefined);
+        weeks.push(week);
+        const index = day.dayOfWeek === 0 ? 6 : day.dayOfWeek - 1;
+        weeks[weeks.length - 1][index] = day;
       } else {
-        weeks.push([day]);
+        const index = day.dayOfWeek === 0 ? 6 : day.dayOfWeek - 1;
+        weeks[weeks.length - 1][index] = day;
       }
     });
 

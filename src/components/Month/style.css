@@ -11,10 +11,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.week-container_first-week {
-  justify-content: flex-end;
+  gap: 1px;
 }
 
 .cell {
@@ -24,7 +21,8 @@
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  inline-size: calc(100% / 7);
+  inline-size: 100%;
+  outline: solid 1px black;
 }
 
 .cell:hover {
@@ -37,4 +35,9 @@
 
 .cell_sunday {
   color: red;
+}
+
+.cell_current-day {
+  background: rgba(255, 0, 0, 0.1);
+  outline: solid 2px red;
 }

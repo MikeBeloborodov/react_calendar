@@ -1,3 +1,4 @@
+import "./style.css";
 import { CalendarDay } from "../../classes/CalendarDay";
 
 type TCellProps = {
@@ -6,8 +7,8 @@ type TCellProps = {
 
 export const Cell = ({ day }: TCellProps) => {
   return (
-    <>
-      <div>{day?.date}</div>
-    </>
+    <div className="cell-container">
+      <div className="cell-container_date-number">{day?.date}</div>
+    </div>
   );
 };

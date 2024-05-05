@@ -3,7 +3,6 @@
   margin: 0 auto;
   inline-size: 100%;
   block-size: 100%;
-  grid-gap: 1px;
 }
 
 .week-container {
@@ -11,7 +10,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 1px;
 }
 
 .cell {
@@ -22,11 +20,12 @@
   justify-content: center;
   cursor: pointer;
   inline-size: 100%;
-  outline: solid 1px black;
+  border-left: solid 1px lightgray;
+  border-top: solid 1px lightgray;
 }
 
 .cell:hover {
-  background-color: gray;
+  background-color: lightgray;
 }
 
 .cell_saturday {
@@ -39,5 +38,4 @@
 
 .cell_current-day {
   background: rgba(255, 0, 0, 0.1);
-  outline: solid 2px red;
 }

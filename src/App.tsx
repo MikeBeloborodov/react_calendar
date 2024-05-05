@@ -4,6 +4,7 @@ import { FullDate } from "./components/FullDate";
 import { Month } from "./components/Month";
 import { CalendarMonth } from "./classes/CalendarMonth";
 import { getMonthData } from "./utils/date";
+import { WeekDays } from "./components/WeekDays";
 
 export const App = () => {
   const [date, setDate] = useState({ year: 2024, month: 4 });
@@ -33,6 +34,7 @@ export const App = () => {
   return (
     <div className="app">
       <FullDate month={month} nextMonth={nextMonth} prevMonth={prevMonth} />
+      <WeekDays />
       <Month month={month} />
     </div>
   );

@@ -1,0 +1,19 @@
+.week-days {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  inline-size: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.week-days_day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  font-size: 20px;
+  border-left: solid 1px lightgray;
+}

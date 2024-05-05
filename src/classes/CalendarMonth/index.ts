@@ -15,19 +15,12 @@ export class CalendarMonth {
     const weeks: Array<undefined | CalendarDay>[] = [];
 
     this._days.forEach((day) => {
-      if (day.dayOfWeek === 1) {
-        const week = Array(7).fill(undefined);
-        week[day.dayOfWeek - 1] = day;
-        weeks.push(week);
-      } else if (weeks.length === 0) {
-        const week = Array(7).fill(undefined);
-        weeks.push(week);
-        const index = day.dayOfWeek === 0 ? 6 : day.dayOfWeek - 1;
-        weeks[weeks.length - 1][index] = day;
-      } else {
-        const index = day.dayOfWeek === 0 ? 6 : day.dayOfWeek - 1;
-        weeks[weeks.length - 1][index] = day;
+      if (day.dayOfWeekString === "Monday" || weeks.length === 0) {
+        this.addEmptyWeek(weeks);
       }
+      // EU style calendar
+      const index = day.dayOfWeekString === "Sunday" ? 6 : day.dayOfWeek - 1;
+      weeks[weeks.length - 1][index] = day;
     });
 
     return weeks;
@@ -56,5 +49,9 @@ export class CalendarMonth {
 
   get year() {
     return this._year;
+  }
+
+  private addEmptyWeek(weeks: Array<undefined | CalendarDay>[]): void {
+    weeks.push([...Array(7)]);
   }
 }

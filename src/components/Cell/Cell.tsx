@@ -1,4 +1,4 @@
-import "./style.css";
+import * as styles from "./style.module.css";
 import { CalendarDay } from "../../classes/CalendarDay";
 import { useSelector } from "../../store/store";
 import { selectors } from "../../store/slices";
@@ -12,13 +12,13 @@ export const Cell = ({ day }: TCellProps) => {
   const relatedNote = notes.find((item) => item.date === day?.fullDate);
 
   return (
-    <div className="cell-container">
-      <div className="cell-container_date-number">{day?.date}</div>
-      <div className="cell-container_notes">
-        <ol className="cell-container_day-notes">
+    <div className={styles.cellContainer}>
+      <div className={styles.dateNumber}>{day?.date}</div>
+      <div className={styles.cellContainerNotes}>
+        <ol className={styles.dayNotes}>
           {relatedNote?.dayNotes.map((note) => <li>{note}</li>)}
         </ol>
-        <ol className="cell-container_night-notes">
+        <ol className={styles.nightNotes}>
           {relatedNote?.nightNotes.map((note) => <li>{note}</li>)}
         </ol>
       </div>

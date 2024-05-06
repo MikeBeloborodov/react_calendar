@@ -1,4 +1,4 @@
-.week-days {
+.weekDays {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-.week-days_day {
+.day {
   display: flex;
   align-items: center;
   justify-content: center;

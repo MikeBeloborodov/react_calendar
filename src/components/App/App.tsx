@@ -1,12 +1,12 @@
-import "./index.css";
+import * as styles from "../../index.module.css";
 import { useEffect, useState } from "react";
-import { FullDate } from "./components/FullDate";
-import { Month } from "./components/Month";
-import { CalendarMonth } from "./classes/CalendarMonth";
-import { getMonthData } from "./utils/date";
-import { WeekDays } from "./components/WeekDays";
-import { useDispatch } from "./store/store";
-import { actions } from "./store/slices";
+import { FullDate } from "../FullDate";
+import { Month } from "../Month";
+import { CalendarMonth } from "../../classes/CalendarMonth";
+import { getMonthData } from "../../utils/date";
+import { WeekDays } from "../WeekDays";
+import { useDispatch } from "../../store/store";
+import { actions } from "../../store/slices";
 
 export const App = () => {
   const [date, setDate] = useState({ year: 2024, month: 4 });
@@ -43,7 +43,7 @@ export const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <FullDate month={month} nextMonth={nextMonth} prevMonth={prevMonth} />
       <WeekDays />
       <Month month={month} />

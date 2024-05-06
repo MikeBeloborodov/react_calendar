@@ -1,5 +1,5 @@
-import "./style.css";
-import classNames from "classnames";
+import * as styles from "./style.module.css";
+import classNames from "classnames/bind";
 import { v4 as uuidv4 } from "uuid";
 import { Cell } from "../Cell";
 import { CalendarMonth } from "../../classes/CalendarMonth";
@@ -10,22 +10,19 @@ type TMonthProps = {
 
 export const Month = ({ month }: TMonthProps) => {
   const weeks = month.weeks;
+  const cx = classNames.bind(styles);
   return (
-    <div className="month-container">
-      {weeks.map((week, indx) => (
-        <ul
-          key={uuidv4()}
-          className={classNames("week-container", {
-            "week-container_first-week": indx === 0,
-          })}
-        >
+    <div className={styles.monthContainer}>
+      {weeks.map((week) => (
+        <ul key={uuidv4()} className={`${styles.weekContainer}`}>
           {week.map((day) => (
             <li
               key={uuidv4()}
-              className={classNames("cell", {
-                cell_saturday: day && day.dayOfWeekString === "Saturday",
-                cell_sunday: day && day.dayOfWeekString === "Sunday",
-                "cell_current-day": day?.isCurrentDay,
+              className={cx({
+                cell: true,
+                cellSaturday: day && day.dayOfWeekString === "Saturday",
+                cellSunday: day && day.dayOfWeekString === "Sunday",
+                cellCurrentDay: day?.isCurrentDay,
               })}
             >
               <Cell day={day} />

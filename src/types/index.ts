@@ -1,4 +1,4 @@
-import { Day } from "../classes/Day";
+import { CalendarDay } from "../classes/CalendarDay";
 
 export enum DayOfWeek {
   Sunday = 0,
@@ -10,4 +10,15 @@ export enum DayOfWeek {
   Saturday = 6,
 }
 
-export type TMonthData = Day[];
+export enum TimeOfDay {
+  day = "day",
+  night = "night",
+}
+
+export type TMonthData = CalendarDay[];
+
+export type TNote = {
+  date: string;
+  dayNotes: string[];
+  nightNotes: string[];
+};

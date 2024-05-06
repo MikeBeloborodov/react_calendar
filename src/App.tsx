@@ -1,18 +1,27 @@
 import "./index.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FullDate } from "./components/FullDate";
 import { Month } from "./components/Month";
 import { CalendarMonth } from "./classes/CalendarMonth";
 import { getMonthData } from "./utils/date";
 import { WeekDays } from "./components/WeekDays";
+import { useDispatch } from "./store/store";
+import { actions } from "./store/slices";
 
 export const App = () => {
   const [date, setDate] = useState({ year: 2024, month: 4 });
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.initStore());
+  }, []);
+
   const month = new CalendarMonth(
     getMonthData(date.year, date.month),
     date.year,
     date.month,
   );
+
   const nextMonth = () => {
     setDate((oldVal) => {
       if (oldVal.month < 11) {
@@ -22,6 +31,7 @@ export const App = () => {
       }
     });
   };
+
   const prevMonth = () => {
     setDate((oldVal) => {
       if (oldVal.month > 0) {
@@ -31,6 +41,7 @@ export const App = () => {
       }
     });
   };
+
   return (
     <div className="app">
       <FullDate month={month} nextMonth={nextMonth} prevMonth={prevMonth} />

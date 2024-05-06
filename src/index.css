@@ -9,6 +9,16 @@ html {
   box-sizing: border-box;
 }
 
+p,
+h1,
+h2,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
 .app {
   margin: 0;
   inline-size: 100%;

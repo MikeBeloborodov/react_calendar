@@ -51,4 +51,8 @@ export class CalendarDay {
     ];
     return days[this._dayOfWeek];
   }
+
+  get fullDate() {
+    return `${this._date}-${this._month}-${this._year}`;
+  }
 }

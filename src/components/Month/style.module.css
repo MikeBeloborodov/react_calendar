@@ -1,4 +1,4 @@
-.month-container {
+.monthContainer {
   display: grid;
   margin: 0 auto;
   grid-auto-rows: 1fr;
@@ -6,7 +6,7 @@
   block-size: 100%;
 }
 
-.week-container {
+.weekContainer {
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -25,14 +25,14 @@
   background-color: lightgray;
 }
 
-.cell_saturday {
+.cellSaturday {
   color: blue;
 }
 
-.cell_sunday {
+.cellSunday {
   color: red;
 }
 
-.cell_current-day {
+.cellCurrentDay {
   background: rgba(255, 0, 0, 0.1);
 }

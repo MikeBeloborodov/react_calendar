@@ -1,4 +1,4 @@
-.full-date-container {
+.fullDateContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,7 +6,7 @@
   gap: 30px;
 }
 
-.full-date {
+.fullDate {
   text-align: center;
   inline-size: 300px;
 }

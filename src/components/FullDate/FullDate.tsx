@@ -1,4 +1,4 @@
-import "./style.css";
+import * as styles from "./style.module.css";
 import { CalendarMonth } from "../../classes/CalendarMonth";
 
 type TFullDateProps = {
@@ -9,12 +9,14 @@ type TFullDateProps = {
 
 export const FullDate = ({ month, nextMonth, prevMonth }: TFullDateProps) => {
   return (
-    <div className="full-date-container">
-      <button className="controls" onClick={() => prevMonth()}>
+    <div className={styles.fullDateContainer}>
+      <button className={styles.controls} onClick={() => prevMonth()}>
         {"<"}
       </button>
-      <h1 className="full-date">{`${month.monthString}, ${month.year}`}</h1>
-      <button className="controls" onClick={() => nextMonth()}>
+      <h1
+        className={styles.fullDate}
+      >{`${month.monthString}, ${month.year}`}</h1>
+      <button className={styles.controls} onClick={() => nextMonth()}>
         {">"}
       </button>
     </div>

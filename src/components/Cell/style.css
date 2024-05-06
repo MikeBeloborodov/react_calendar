@@ -9,4 +9,24 @@
   position: relative;
   inline-size: 100%;
   block-size: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cell-container_notes {
+  display: grid;
+  grid-auto-rows: 1fr;
+  block-size: 100%;
+}
+
+.cell-container_day-notes {
+  padding: 10px 0 0 30px;
+}
+
+.cell-container_night-notes {
+  padding: 10px 0 0 30px;
+}
+
+.cell-container_day-notes {
+  border-bottom: 1px solid lightgray;
 }

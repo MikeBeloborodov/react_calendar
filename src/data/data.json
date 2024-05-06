@@ -1,0 +1,12 @@
+[
+  {
+    "date": "6-4-2024",
+    "dayNotes": ["Hello"],
+    "nightNotes": ["Test !"]
+  },
+  {
+    "date": "7-4-2024",
+    "dayNotes": ["test from 7"],
+    "nightNotes": ["test1", "test2!"]
+  }
+]
